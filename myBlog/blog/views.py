@@ -41,18 +41,21 @@ def post_new(request):
 
 
 def post_page(request, **kwargs):
-    print('#' * 15)
     post = Post.objects.get(pk=kwargs['pk'])
     comments = Comment.objects.filter(post_id=post.id)
     form = CommentForm()
     is_liked = False
     if request.user.is_authenticated:
         is_liked = post.likes.filter(author_id=request.user.id).exists()
-
     return render(request, 'post_page.html', {'post': post, 'comments': comments, 'form': form, 'is_liked': is_liked})
 
 
 def comment_new(request):
+    '''
+
+    :param request:
+    :return:
+    '''
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
