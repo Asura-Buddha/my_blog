@@ -1,0 +1,20 @@
+div.col-md-auto {
+    margin-left: 250px;
+    background-color: grey;
+}
+div.media-body {
+    background-color: yellow;
+}
+div.row {
+    width: 30 px;
+}
+
+#greeting {
+    margin-left:700px;
+    margin-top: 20px;
+    
+}
+
+#navbar {
+}
+

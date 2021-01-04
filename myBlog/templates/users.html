@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <a href = "{% url 'home' %}" >Link for home</a>
+        {% for user in users %}
+        <div class="container">
+          <!--<img src="..." class="mr-3" alt="...">-->
+            <div class="row justify-content-md-center">
+                <div class="col-md-auto ">
+                  <div class="media-body">
+                    <h5 class="mt-0">{{user.username}}</h5>
+                    <h5 class="mt-0">{{user.first_name}}</h5>
+                    <h5 class="mt-0">{{user.last_name}}</h5>
+                    <h5 class="mt-0">{{user.email}}</h5>
+                  </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% endblock %}

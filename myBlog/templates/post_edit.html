@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h2>New post</h2>
+        <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+    {% else %}
+        <h2> Please log in to post</h2>
+        <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
+{% endblock %}

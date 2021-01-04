@@ -1,0 +1,40 @@
+
+{% extends 'base.html' %}
+    {% block content %}
+    <section id="contact">
+
+        <!-- Heading -->
+
+        <!--Grid row-->
+        <div class="row">
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-12"></div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+
+
+        <div class="col-lg-6 col-md-12">
+          <!-- Form contact -->
+            <div class="text-center mt-4">
+                <h2 class="mb-5 font-weight-bold text-center" style="margin-top: 100px;">Log In</h2>
+                <form class="p-5 grey-text" method="post" style="margin-top: -50px;">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+
+                <button class="btn btn-primary" type="submit">Log In <i class="far fa-paper-planeml-1"></i></button>
+                <p style="margin-top: 50px;"><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
+                <a href="{% url 'signup' %}">Sign Up</a>
+                </form>
+
+            </div>
+          <!-- Form contact -->
+        </div>
+        <!--Grid row-->
+
+
+
+    </section>
+
+{% endblock %}

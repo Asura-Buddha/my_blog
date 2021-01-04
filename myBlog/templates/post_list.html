@@ -1,0 +1,50 @@
+{% load static %}
+<!--Section: Examples-->
+<section id="examples" class="text-center">
+  <!--Grid row-->
+  <div class="row">
+    {% for post in posts %}
+    <!--Grid column-->
+    <div class="col-lg-4 col-md-12 mb-4">
+
+      <div class="view overlay z-depth-1-half img-size-list ">
+        {% if post.cover %}
+          <img src="{{ post.cover.url }}" class="img-fluid img-size-list">
+        {% else %}
+          <img src="{% static 'img/default-thumbnail.jpg' %}" class="img-fluid">
+        {% endif %}
+        <div class="bottom-right"><i class="fas fa-heart fa-4x red-text"></i> {{post.likes_count}}</div>
+        <a href="{% url 'post_page' post.pk %}">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+      <h4 class="my-4 font-weight-bold">{{post.title}}</h4>
+      <p class="grey-text">{{post.text}}</p>
+
+    </div>
+    <!--Grid column-->
+    {% endfor %}
+
+  </div>
+  <!--Grid row-->
+
+  <!--Grid row-->
+  <div class="row">
+    <!--Grid column-->
+    <div class="col-lg-4 col-md-12 mb-4"></div>
+    {% if request.path == "/" %}
+    <div class="col-lg-4 col-md-12 mb-4">
+      <a href="{% url 'post_list' %}">
+        <button type="button" class="btn btn-outline-gray">Read more<i class="fas fa-book ml-2"></i></button>
+      </a>
+    </div>
+    {% endif %}
+
+    <div class="col-lg-4 col-md-12 mb-4"></div>
+    <!--Grid column-->
+
+  </div>
+  <!--Grid row-->
+
+</section>

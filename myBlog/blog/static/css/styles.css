@@ -1,0 +1,72 @@
+html,
+body,
+header,
+#intro {
+    height: 100%;
+}
+
+#intro {
+    background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%283%29.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.top-nav-collapse {
+  background-color: #24355C;
+}
+@media (max-width: 768px) {
+  .navbar:not(.top-nav-collapse) {
+    background-color: #24355C;
+  }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+  .navbar:not(.top-nav-collapse) {
+    background-color: #24355C;
+  }
+}
+
+.navbar-fixed-color {
+    background-color: #24355C;
+}
+
+.img-size-list {
+    width: 350px;
+    height: 263px;
+}
+
+.img-size-detail {
+    width: 450px;
+    height: 250px;
+}
+
+#id_username {
+    width: 100%;
+}
+
+#id_password {
+    width: 100%;
+}
+
+#id_password1 {
+    width: 100%;
+}
+
+#id_password2 {
+    width: 100%;
+}
+
+.helptext {
+    display: none;
+}
+
+div.text-center form ul {
+    display: none;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
