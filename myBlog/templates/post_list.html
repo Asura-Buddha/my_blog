@@ -13,7 +13,9 @@
         {% else %}
           <img src="{% static 'img/default-thumbnail.jpg' %}" class="img-fluid">
         {% endif %}
-        <div class="bottom-right"><i class="fas fa-heart fa-4x red-text"></i> {{post.likes_count}}</div>
+        <div class="bottom-right"><i class="fas fa-heart fa-4x red-text" style="font-size: 30px"></i>
+          {{post.likes_count}}
+        </div>
         <a href="{% url 'post_page' post.pk %}">
           <div class="mask rgba-white-slight"></div>
         </a>

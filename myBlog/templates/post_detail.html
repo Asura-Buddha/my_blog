@@ -43,16 +43,16 @@
             </p>
 
             {% for comment in comments %}
-            <div class="comment">
-              <h4>{{comment.author}}</h4>
+            <div class="comment alert alert-secondary">
+
               <h5>{{comment.text}}</h5>
-              <h6>{{comment.created_date}}</h6>
+              <h6>{{comment.author}} {{comment.created_date}}</h6>
             </div>
             {% endfor %}
 
             {% if user.is_authenticated %}
-                <h2>Create New Comment</h2>
-                <form action="{% url 'comment_new' %}" method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
+                <h2>Write a comment</h2>
+                <form action="{% url 'comment_new' %}" method="POST" class="post-form" enctype="multipart/form-data" id="create_comment">{% csrf_token %}
                     {{ form.as_p }}
                     <input type="text" id='post_pk' name="post_pk" value="{{post.pk}}" style="display:none">
                     <button type="submit" class="save btn btn-default">Comment</button>

@@ -61,3 +61,13 @@ button.invis {
     border:none;
     background: none;
 }
+
+.comment {
+    /*background: #00D3FA;*/
+}
+p {
+     margin-top: 25px;
+}
+form#create_comment p label {
+    display: none;
+}
