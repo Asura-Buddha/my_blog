@@ -15,8 +15,6 @@ def home(request):
 
 def post_list(request):
     posts = Post.objects.all()
-    if request.user.is_authenticated:
-        posts = posts.filter(author=request.user)
     return render(request, 'posts.html', {'posts': posts})
 
 
